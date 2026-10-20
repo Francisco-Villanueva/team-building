@@ -8,9 +8,15 @@ export interface VoteQuestion {
 // Ids must match VOTE_QUESTION_IDS in server/src/content.ts
 export const VOTE_QUESTIONS: VoteQuestion[] = [
   { id: 'q1', options: [{ label: 'Beach', emoji: '🏖️' }, { label: 'Mountain', emoji: '⛰️' }] },
+  { id: 'q6', options: [{ label: 'Early bird', emoji: '🐦' }, { label: 'Night owl', emoji: '🦉' }] },
   { id: 'q2', options: [{ label: 'Adventure and excursions', emoji: '🧗' }, { label: 'Hotel and relaxing', emoji: '🛎️' }] },
+  { id: 'q7', options: [{ label: 'Pizza', emoji: '🍕' }, { label: 'Sushi', emoji: '🍣' }] },
+  { id: 'q10', options: [{ label: 'Sweet', emoji: '🍫' }, { label: 'Salty', emoji: '🍟' }] },
+  { id: 'q8', options: [{ label: 'Work from home', emoji: '🏠' }, { label: 'Work from the office', emoji: '🏢' }] },
   { id: 'q4', options: [{ label: 'Teleporting', emoji: '✨' }, { label: 'Mind reading', emoji: '🧠' }] },
+  { id: 'q11', options: [{ label: 'Visit the past', emoji: '⏪' }, { label: 'Visit the future', emoji: '⏩' }] },
   { id: 'q5', options: [{ label: 'Game night', emoji: '🎲' }, { label: 'Dinner out', emoji: '🍽️' }] },
+  { id: 'q9', options: [{ label: 'Fly', emoji: '🦸' }, { label: 'Be invisible', emoji: '👻' }] },
 ];
 
 /** Order of the personal round (keep in sync with TOPICS in server/src/content.ts). */

@@ -273,3 +273,20 @@ input:focus, textarea:focus { outline: none; border-color: var(--brand-2); box-s
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Full-size photo dialog (rendered in a portal so card transforms/overflow can't clip it) */
+.tile .imgbtn { position: relative; }
+.expand-hint {
+  position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 600; color: #fff;
+  background: rgba(31, 29, 51, 0.62); backdrop-filter: blur(6px); opacity: 0; transform: translateY(6px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.tile .imgbtn:hover .expand-hint, .tile .imgbtn:focus-visible .expand-hint { opacity: 1; transform: none; }
+@media (hover: none) { .expand-hint { opacity: 1; transform: none; } }
+.photo-dialog { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(20, 16, 50, 0.88); backdrop-filter: blur(6px); animation: fade 0.25s var(--ease); cursor: zoom-out; }
+.photo-dialog .frame { max-width: min(96vw, 1100px); display: flex; flex-direction: column; align-items: center; gap: 14px; animation: pop 0.4s var(--spring) both; cursor: default; }
+.photo-dialog img { max-width: 100%; max-height: 80dvh; min-width: min(80vw, 420px); width: auto; height: auto; object-fit: contain; border-radius: 20px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); background: var(--track); }
+.photo-dialog .caption { color: #fff; font-style: italic; text-align: center; max-width: 60ch; margin: 0; }
+.photo-dialog .close { position: absolute; top: 16px; right: 16px; width: 46px; height: 46px; border-radius: 50%; border: 0; font-size: 1.2rem; color: #fff; background: rgba(255, 255, 255, 0.18); cursor: pointer; transition: transform 0.2s var(--spring), background 0.2s; }
+.photo-dialog .close:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.08); }
